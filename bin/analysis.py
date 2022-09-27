@@ -4,18 +4,9 @@ import pymysql
 import jieba
 import json
 
-conn = pymysql.connect(
-    host='localhost',
-    user='root',
-    password='000000',
-    db='test',
-    charset='utf8mb4',
-    port=3306)
-
+conn = pymysql.connect(host='localhost', user='root', password='123456', db='test', charset='utf8mb4', port=3306)
 cur = conn.cursor()
-
-cur.execute("select * from log")
-
+cur.execute("SELECT * FROM log")
 r = cur.fetchall()
 result = {}
 
@@ -27,7 +18,7 @@ for item in r:
         max_item = item
 print(max_item)
 
-# # 进行分词
+# 进行分词
 word_arr = []
 for item in r:
     content = item[3]
@@ -41,10 +32,7 @@ for word in word_arr:
         word_count_map[word] = 1
 word_count_arr = []
 for word in word_count_map:
-    o = {
-        'word': word,
-        'count': word_count_map[word]
-    }
+    o = {'word': word, 'count': word_count_map[word]}
     word_count_arr.append(o)
 
 
@@ -58,7 +46,9 @@ def custom_sort(x, y):
 
 result['word'] = sorted(word_count_arr, key=functools.cmp_to_key(custom_sort))
 
+for o in result['word']:
+    with open("csv.txt", "a+", encoding="utf-8") as f:
+        f.write(f"{o['word']}\t{o['count']}\n")
+
 with open("result.json", "w", encoding="utf-8") as f:
-    f.write(
-        json.dumps(result, ensure_ascii=False)
-    )
+    f.write(json.dumps(result, ensure_ascii=False))

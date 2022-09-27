@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="a">
-      这一年我们
+      这些年我们
       <span class="value"> {{ maxMonth[0] }} </span>月 说的话最多 有<span
         class="value"
       >

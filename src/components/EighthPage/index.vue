@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="a">
-      这一年我们最喜欢在
+      我们最喜欢在
       <span class="value"> {{ maxMonth[0] }} </span>点聊天 说的话 有<span
         class="value"
       >

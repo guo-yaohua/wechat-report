@@ -1,13 +1,13 @@
 <template>
   <div class="box">
     <div class="title">
-      <div class="a">2021</div>
+      <div class="a">菠萝蜜~炒酸奶</div>
       <div class="b">
         WECHAT
         <br />
         REPORT
       </div>
-      <div class="c">年度聊天报告</div>
+      <div class="c">婚前聊天报告~</div>
     </div>
     <div class="human">
       <div class="boy">
@@ -40,7 +40,7 @@ export default {};
   grid-template-columns: max-content 1fr;
 }
 .title .a {
-  font-size: 25vw;
+  font-size: 6vw;
 }
 .title .b {
   padding-top: 1em;

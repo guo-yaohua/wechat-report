@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="a">
-      今年我们一共发了
+      今年在微信上一共发了
       <span class="value"> {{ count }} </span>
       条消息
     </div>
